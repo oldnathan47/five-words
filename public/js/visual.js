@@ -4,8 +4,8 @@
 
   //creating the space where the visual will go
   var svg = d3
-  //svg: a vector graphic format—based on XML
-  //and is used to display a variety of graphics on the Web and other environments.
+    //svg: a vector graphic format—based on XML
+    //and is used to display a variety of graphics on the Web and other environments.
     .select("#chart")
     .append("svg")
     .attr("height", height)
@@ -43,6 +43,13 @@
     //retrieving the data
     const dataset = await d3.csv("fake-data.csv");
     
+    // const Database = use('Database')
+    // const Route = use('Route')
+
+    // Route.get('/posts', async () => {
+    //   return await Database.table('blog_posts').select('*')
+    // })
+
     //creation of circles
     var bubbles = svg
       .selectAll()
@@ -101,25 +108,24 @@
     }
   }
   master();
-  
 })();
 
 //OLD CODE..................................................................................
 
 // d3.queue()
-  //   .defer(d3.csv, "fake-data.csv")
-  //   .await(ready);
+//   .defer(d3.csv, "fake-data.csv")
+//   .await(ready);
 
-  // function ready(error, dataset) {
-  //   var circles = svg
-  //     .seleectAll(".name")
-  //     .data(dataset)
-  //     .enter()
-  //     .append("circle")
-  //     .attr("class", "name")
-  //     .attr("r", 10)
-  //     .attr("fill", "lightblue");
-  // }
+// function ready(error, dataset) {
+//   var circles = svg
+//     .seleectAll(".name")
+//     .data(dataset)
+//     .enter()
+//     .append("circle")
+//     .attr("class", "name")
+//     .attr("r", 10)
+//     .attr("fill", "lightblue");
+// }
 
 // var dataset = [
 //   { word: "relaxed", recurrence: 10 },
