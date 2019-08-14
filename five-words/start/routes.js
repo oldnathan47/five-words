@@ -17,7 +17,25 @@
 const Route = use("Route");
 
 // landing page
-Route.on("/").render("landing");
+// Route.on("/").render("landing");
+
+Route.on('/').render('index')
+
+// login page
+Route.on('/login').render('auth.login')
+Route.post('/login', 'UserController.login').validator('LoginUser');
+
+//sign up
+Route.on('/signup').render('auth.signup')
+Route.post('/signup', 'UserController.create').validator('CreateUser');
+
+//logout
+Route.get('/logout', async ({ auth, response }) => {
+  await auth.logout();
+  return response.redirect('/');
+});
+
+
 
 // directory page
 
@@ -25,6 +43,5 @@ Route.on("/").render("landing");
 
 // data page
 
-// sign-up page
 
-// sign-in page
+
