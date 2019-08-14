@@ -19,30 +19,29 @@ const Route = use("Route");
 // landing page
 // Route.on("/").render("landing");
 
-Route.on('/').render('index')
+Route.on("/").render("index");
 
 // login page
-Route.on('/login').render('auth.login')
-Route.post('/login', 'UserController.login').validator('LoginUser');
+Route.on("/login").render("auth.login");
+Route.post("/login", "UserController.login").validator("LoginUser");
 
 //sign up
-Route.on('/signup').render('auth.signup')
-Route.post('/signup', 'UserController.create').validator('CreateUser');
+Route.on("/signup").render("auth.signup");
+Route.post("/signup", "UserController.create").validator("CreateUser");
 
 //logout
-Route.get('/logout', async ({ auth, response }) => {
+Route.get("/logout", async ({ auth, response }) => {
   await auth.logout();
-  return response.redirect('/');
+  return response.redirect("/");
 });
 
 //data viz
-Route.on('/history').render('dataVis')
+Route.on("/history").render("dataVis");
 
 // directory page
 
 // input page
+Route.get("/journal", "JournalController.index");
+Route.post("/journal", "JournalController.store");
 
 // data page
-
-
-
