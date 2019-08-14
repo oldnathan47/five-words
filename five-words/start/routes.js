@@ -35,7 +35,8 @@ Route.get('/logout', async ({ auth, response }) => {
   return response.redirect('/');
 });
 
-
+//data viz
+Route.on('/history').render('dataVis')
 
 // directory page
 
