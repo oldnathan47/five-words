@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Vollkorn&display=swap");
+
+  html,
+  body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+}
+
+
+/* .body {
+  background-image: url("actuallyEditedGif.gif");
+  background-size: cover;
+
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Vollkorn', serif;
+  font-weight: 300;
+} */
+
+body {
+  font-family: "Vollkorn", serif;
+  font-weight: 500;
+  background-image: url("actuallyEditedGif.gif");
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+section{
+  background-color: rgba(245, 245, 220, 0.075);
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 536px;
+  margin: auto;
+  position: relative;
+  /* play around with the max width */
+}
+
+.title {
+  background-color: rgba(0, 0, 0, 0.014);
+  color: aliceblue;
+  text-align: center;
+  font-size: 150px;
+  width: 1000px;
+  height: 200px;
+  margin-top: 200px;
+  background-size: 100%;
+  opacity: 100;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.3, 1) 0.2s forwards;
+}
+
+.subtitle {
+  /* margin-top: 50%; */
+  /* color: #bdb3cb; */
+  background-color: rgba(165, 42, 42, 0.027);
+  color: aliceblue;
+  font-size: 30px;
+  text-align: center;
+  width: 1000px;
+  letter-spacing: 0.5;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.3, 1) 0.5s forwards;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0.83rem 0;
+}
+
+.toRemoveLaterjobpostr{
+  color: antiquewhite;
+}
+
+.buttonrow{
+  background-color: rgba(43, 171, 226, 0.055);
+}
+
+.signUpButton{
+  padding: 25px 50px;
+  margin-top: 55px;
+  float: left;
+  margin-right: 75px;
+  background-color: darkslategrey;
+  font-size: 17px;
+  border: 0px;
+  border-radius: 20px;
+  color: aliceblue;
+}
+
+.logInButton{
+  padding: 25px 50px;
+  margin-top: 55px;
+  float: right;
+  margin-left: 75px;
+  background-color: darkslategrey;
+  font-size: 17px;
+  border: 0px;
+  border-radius: 20px;
+  color: aliceblue;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2%;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
