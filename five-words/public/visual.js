@@ -1,5 +1,7 @@
-(function() {
-  var d3 = require("d3");
+document.addEventListener('DOMContentLoaded', bubbleChart)
+
+function bubbleChart() {
+  // var d3 = require("d3");
   var height = 1000;
   var width = height;
 
@@ -13,6 +15,7 @@
     .attr("width", width)
     .append("g")
     .attr("transform", "translate(0,0)");
+    console.log(svg);
 
   //the scale at whcih the bubbles will generate
   var radiusScale = d3
@@ -42,9 +45,10 @@
 
   async function master() {
     //retrieving the data
-    const dataset = await d3.csv("public/fake-data.csv");
+    const dataset = await d3.csv("fake-data.csv");
+    console.log(dataset);
 
-    //creation of circles
+    //creation of bubbles
     var bubbles = svg
       .selectAll()
       .data(dataset)
@@ -54,7 +58,7 @@
       .attr("r", function(d) {
         return radiusScale(d.recurrence);
       })
-      //assigning each circle a random color
+      //assigning each bubble a random color
       .attr("fill", function color(d) {
         let colors = d3.schemeRdBu[10];
         let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -62,6 +66,7 @@
         colors.splice(randomColorIndex, 1);
         return randomColor;
       });
+      console.log(bubbles);
     //creating the text
     var text = svg
       .selectAll()
@@ -102,7 +107,7 @@
     }
   }
   master();
-})();
+};
 
 //OLD CODE..................................................................................
 

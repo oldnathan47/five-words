@@ -40,4 +40,4 @@ Route.get("/logout", async ({ auth, response }) => {
 // input page
 
 // data page
-Route.on("/history").render("dataVis");
+Route.on("/reflection").render("dataVis");
