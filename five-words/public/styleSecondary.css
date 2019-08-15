@@ -31,3 +31,16 @@ section {
   margin: auto;
   position: relative;
 }
+
+.title {
+  background-color: rgba(0, 0, 0, 0.014);
+  color: aliceblue;
+  text-align: center;
+  font-size: 60px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 200px;
+  background-size: 100%;
+  opacity: 100;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.3, 1) 0.2s forwards;
+}

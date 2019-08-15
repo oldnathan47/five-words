@@ -1,12 +1,12 @@
-@layout('layouts.Main')
+@layout('layouts.Secondary')
 
 @section('title')
 Sign up
 @endsection
 
 @section('content')
-<section>
-  <h1>Join now</h1>
+<div>
+  <div class="title" style="background-color:chartreuse"> Join Now </div>
 
   <div class="job-container">
       <form action="{{ route('UserController.create') }}" method="POST">
@@ -39,5 +39,5 @@ Sign up
         <button type="submit">Join now</button>
       </form>
   </div>
-</section>
+</div>
 @endsection
