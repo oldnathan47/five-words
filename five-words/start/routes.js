@@ -17,8 +17,6 @@
 const Route = use("Route");
 
 // landing page
-// Route.on("/").render("landing");
-
 Route.on("/").render("index");
 
 // login page
@@ -36,6 +34,7 @@ Route.get("/logout", async ({ auth, response }) => {
 });
 
 // directory page
+Route.on("/directory").render("directory");
 
 // input page
 Route.get("/journal", "JournalController.index");

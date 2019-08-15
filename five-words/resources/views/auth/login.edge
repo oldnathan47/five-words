@@ -1,11 +1,12 @@
-@layout('layouts.Main')
+@layout('layouts.Secondary')
 
 @section('title')
 Login
 @endsection
 
 @section('content')
-  <h1>Login now</h1>
+<div id="uiContainer" class="ui segment">
+<div id="logInTitle" class="title" > Log In Now </div>  
 
   <div class="job-container">
     @if(flashMessage('loginError'))
@@ -14,7 +15,7 @@ Login
       <form action="{{ route('UserController.login') }}" method="POST">
         {{ csrfField() }}
 
-        <label for="email">Email</label>
+        <label id="emailInputName" for="email">Email</label>
         <input type="email" name="email" value="{{ old('email', '') }}">
         @if(hasErrorFor('email'))
             <span>
@@ -22,7 +23,7 @@ Login
             </span>
         @endif
 
-        <label for="password">Password</label>
+        <label id="passwordInputName" for="password">Password</label>
         <input type="password" name="password">
         @if(hasErrorFor('password'))
             <span>
@@ -33,4 +34,5 @@ Login
         <button type="submit">Login now</button>
       </form>
   </div>
+</div>
 @endsection

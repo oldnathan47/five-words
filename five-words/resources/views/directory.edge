@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Directory</title>
-    {{ style('public/css/index') }}
-</head>
-<body>
-        <section>
-            
-        </section>
-    </body>
-    </html>
+@layout('layouts.main')
+
+@section('title')
+FIVE WORDS
+{{--  showing up in the tab  --}}
+@endsection
+
+@section('content')
+
+<section>
+    <div class="title" href="/"> FIVE WORDS </div>
+    <div class="subtitle">
+      <p>Document your day, your week, your life. You'll get the picture!
+      </p>
+    </div>
+    <div class="buttonrow">
+      <a href="/journal"><button class="journalButton"> Journal Entry</button></a>
+      <a href="/reflection"><button class="reflectionButton"> Reflection</button></a>
+      {{--  these need to route to diff pages  --}}
+    </div>
+    </section>
+    
+    @endsection

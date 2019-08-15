@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Talk About Your Day</title>
-    {{ style('public/css/index') }}
-</head>
-<body>
-        <section>
-            <form action="{{ route('JournalController.store') }}" method="POST">
-                {{ csrfField() }}
-                <input type="text" name = "reflectionWho" placeholder="Who?" autofocus>
-                <input type="text" name = "reflectionWhat" placeholder="What?">
-                <input type="text" name = "reflectionWhen" placeholder="When?">
-                <input type="text" name = "reflectionWhere" placeholder="Where?">
-                <input type="text" name = "reflectionWhy" placeholder="Why?">
-                <input type="submit" value="Submit">
-            </form>
-        </section>
+@layout('layouts.Secondary')
 
-        {{--  this shows a list of all of the users reflections  --}}
-        {{--  <ul>
-            @each(reflection in reflections)
-            <li>
-              {{reflection.reflection}}
-            </li>
-            @endeach
-        </ul>  --}}
-    </body>
-    </html>
+@section('title')
+Journal Entry
+@endsection
+
+@section('content')
+<div id="uiContainer" class="ui segment">
+    <div id="logInTitle" class="title" > Tell Us About Your Day </div> 
+    <p> Insert five words. Press "Submit" then "Reflection."</p>
+<form action="{{ route('JournalController.store') }}" method="POST">
+    {{ csrfField() }}
+    <input type="text" name = "reflectionWho" placeholder="Who?" autofocus>
+    <input type="text" name = "reflectionWhat" placeholder="What?">
+    <input type="text" name = "reflectionWhen" placeholder="When?">
+    <input type="text" name = "reflectionWhere" placeholder="Where?">
+    <input type="text" name = "reflectionWhy" placeholder="Why?">
+    <input type="submit" value="Submit">
+</form>
+<a href="/reflection"><button class="reflectionButton"> Reflection </button></a>
+</div>
+
+@endsection

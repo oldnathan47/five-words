@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{ style('styleMain') }}
 
+    @!section('extrascripts')
+
     <title>
         @!section('title')
         {{--  need to declare a title on every page we create. title will be the thing that shows up in the tab  --}}
@@ -17,10 +19,8 @@
     {{--  <div class="container">
         will show up under the the content that we write in individual edge files
         <div class="toRemoveLaterjobpostr">
-            <a href="/" id="logo">JobPostr</a>
             <nav>
             <ul>
-                 <li><a href="/">Jobs</a></li>
                 @loggedIn
                      <li><a href="/post-a-job">My Jobs</a></li>
                      <li><a href="/logout">Logout</a></li>
