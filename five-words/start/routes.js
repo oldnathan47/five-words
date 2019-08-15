@@ -38,6 +38,8 @@ Route.get("/logout", async ({ auth, response }) => {
 // directory page
 
 // input page
+Route.get("/journal", "JournalController.index");
+Route.post("/journal", "JournalController.store");
 
 // data page
 Route.on("/reflection").render("dataVis");

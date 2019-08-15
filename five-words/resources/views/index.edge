@@ -1,18 +1,22 @@
 @layout('layouts.main')
 
 @section('title')
-JobPostr - Sign up
+FIVE WORDS
+{{--  showing up in the tab  --}}
 @endsection
 
 @section('content')
 
-    <div class="logo"></div>
-    <div class="title"></div>
-    <div class="subtitle">
-      <p>AdonisJs simplicity will make you feel confident about your code</p>
-      <p>
-        Don't know where to start? Read the <a href="https://adonisjs.com/docs">documentation</a>.
-      </p>
-    </div>
+<section>
+<div class="title" href="/"> FIVE WORDS </div>
+<div class="subtitle">
+  <p>Document your day, your week, your life. You'll get the picture!
+  </p>
+</div>
+<div class="buttonrow">
+  <a href="/signup"><button class="signUpButton"> Sign Up!</button></a>
+  <a href="/login"><button class="logInButton"> Log In!</button></a>
+</div>
+</section>
 
 @endsection
