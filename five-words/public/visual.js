@@ -1,17 +1,21 @@
-(function() {
+document.addEventListener('DOMContentLoaded', bubbleChart)
+
+function bubbleChart() {
+  // var d3 = require("d3");
   var height = 1000;
   var width = height;
 
   //creating the space where the visual will go
   var svg = d3
-  //svg: a vector graphic format—based on XML
-  //and is used to display a variety of graphics on the Web and other environments.
+    //svg: a vector graphic format—based on XML
+    //and is used to display a variety of graphics on the Web and other environments.
     .select("#chart")
     .append("svg")
     .attr("height", height)
     .attr("width", width)
     .append("g")
     .attr("transform", "translate(0,0)");
+    console.log(svg);
 
   //the scale at whcih the bubbles will generate
   var radiusScale = d3
@@ -42,8 +46,9 @@
   async function master() {
     //retrieving the data
     const dataset = await d3.csv("fake-data.csv");
-    
-    //creation of circles
+    console.log(dataset);
+
+    //creation of bubbles
     var bubbles = svg
       .selectAll()
       .data(dataset)
@@ -53,7 +58,7 @@
       .attr("r", function(d) {
         return radiusScale(d.recurrence);
       })
-      //assigning each circle a random color
+      //assigning each bubble a random color
       .attr("fill", function color(d) {
         let colors = d3.schemeRdBu[10];
         let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -61,6 +66,7 @@
         colors.splice(randomColorIndex, 1);
         return randomColor;
       });
+      console.log(bubbles);
     //creating the text
     var text = svg
       .selectAll()
@@ -101,25 +107,24 @@
     }
   }
   master();
-  
-})();
+};
 
 //OLD CODE..................................................................................
 
 // d3.queue()
-  //   .defer(d3.csv, "fake-data.csv")
-  //   .await(ready);
+//   .defer(d3.csv, "fake-data.csv")
+//   .await(ready);
 
-  // function ready(error, dataset) {
-  //   var circles = svg
-  //     .seleectAll(".name")
-  //     .data(dataset)
-  //     .enter()
-  //     .append("circle")
-  //     .attr("class", "name")
-  //     .attr("r", 10)
-  //     .attr("fill", "lightblue");
-  // }
+// function ready(error, dataset) {
+//   var circles = svg
+//     .seleectAll(".name")
+//     .data(dataset)
+//     .enter()
+//     .append("circle")
+//     .attr("class", "name")
+//     .attr("r", 10)
+//     .attr("fill", "lightblue");
+// }
 
 // var dataset = [
 //   { word: "relaxed", recurrence: 10 },
