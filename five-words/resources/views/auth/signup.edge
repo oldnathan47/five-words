@@ -5,39 +5,42 @@ Sign up
 @endsection
 
 @section('content')
-<div>
-  <div class="title" style="background-color:chartreuse"> Join Now </div>
+<div id="outerContainer">
+<div id="uiContainer" class="ui segment">
+  <div id="signupTitle" class="title" > Join Now </div>
+  {{--  style="background-color:black"  once applied to the title for testing purposes--}}
 
   <div class="job-container">
       <form action="{{ route('UserController.create') }}" method="POST">
         {{ csrfField() }}
 
-        <label for="username">Username</label>
-        <input type="text" name="username" value="{{ old('username', '') }}">
+        <label id="usernameInputName" for="username">Username</label>
+        <input id="usernameInput" type="text" name="username" value="{{ old('username', '') }}">
         @if(hasErrorFor('username'))
             <span>
                 {{ getErrorFor('username') }}
             </span>
         @endif
 
-        <label for="email">Email</label>
-        <input type="email" name="email" value="{{ old('email', '') }}">
+        <label id="emailInputName" for="email">Email</label>
+        <input id="emailInput" type="email" name="email" value="{{ old('email', '') }}">
         @if(hasErrorFor('email'))
             <span>
                 {{ getErrorFor('email') }}
             </span>
         @endif
 
-        <label for="password">Password</label>
-        <input type="password" name="password">
+        <label id="passwordInputName" for="password">Password</label>
+        <input id="passwordInput" type="password" name="password">
         @if(hasErrorFor('password'))
             <span>
                 {{ getErrorFor('password') }}
             </span>
         @endif
 
-        <button type="submit">Join now</button>
+        <button id="signupSumbitButton" type="submit">Join now</button>
       </form>
   </div>
+</div>
 </div>
 @endsection

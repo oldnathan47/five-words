@@ -21,7 +21,7 @@ body {
 }
 
 section {
-  background-color: rgba(245, 245, 220, 0.075);
+  /* background-color: rgba(245, 245, 220, 0.075); */
   /* height: 100%; */
   display: flex;
   flex-direction: column;
@@ -33,14 +33,65 @@ section {
 }
 
 .title {
-  background-color: rgba(0, 0, 0, 0.014);
-  color: aliceblue;
+  /* background-color: rgba(0, 0, 0, 0.014);  for testing purposes*/
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 60px;
   width: fit-content;
   height: fit-content;
-  margin-top: 200px;
+  margin-top: 40px;
   background-size: 100%;
   opacity: 100;
   animation: slideUp 1s cubic-bezier(0.19, 1, 0.3, 1) 0.2s forwards;
+}
+
+#outerContainer{
+  /* align-items: center; */
+  text-align: center;
+  /* display: inline-block; */
+  
+}
+
+#uiContainer{
+  margin: 75px;
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#signupTitle{
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+#logInTitle{
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+#usernameInputName{
+  display: block;
+}
+
+#emailInputName{
+  display: block;
+}
+
+#passwordInputName{
+  display: block;
+}
+
+#signupSumbitButton{
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.toRemoveLaterjobpostr{
+  color:black;
 }
