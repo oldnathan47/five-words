@@ -5,34 +5,32 @@ Login
 @endsection
 
 @section('content')
-<div id="uiContainer" class="ui segment">
-<div id="logInTitle" class="title" > Log In Now </div>  
+<div id="outerContainer">
+  <div id="logInTitle" class="title" > next stop: mindfulness </div>  
 
-  <div class="job-container">
     @if(flashMessage('loginError'))
         <span>{{ flashMessage('loginError') }}</span>
     @endif
       <form action="{{ route('UserController.login') }}" method="POST">
         {{ csrfField() }}
 
-        <label id="emailInputName" for="email">Email</label>
-        <input type="email" name="email" value="{{ old('email', '') }}">
+        <label class="inputLabel" for="email">Email</label>
+        <input class="inputField" type="email" name="email" value="{{ old('email', '') }}">
         @if(hasErrorFor('email'))
             <span>
                 {{ getErrorFor('email') }}
             </span>
         @endif
 
-        <label id="passwordInputName" for="password">Password</label>
-        <input type="password" name="password">
+        <label class="inputLabel" for="password">Password</label>
+        <input class="inputField" type="password" name="password">
         @if(hasErrorFor('password'))
             <span>
                 {{ getErrorFor('password') }}
             </span>
         @endif
 
-        <button type="submit">Login now</button>
+        <button class="submitButton" type="submit">let's begin</button>
       </form>
-  </div>
 </div>
 @endsection
