@@ -1,46 +1,41 @@
 @layout('layouts.Secondary')
 
 @section('title')
-Sign up
+Sign Up
 @endsection
 
 @section('content')
 <div id="outerContainer">
-<div id="uiContainer" class="ui segment">
-  <div id="signupTitle" class="title" > Join Now </div>
-  {{--  style="background-color:black"  once applied to the title for testing purposes--}}
+  <div id="signupTitle" class="title" > signing up is a breeze </div>
 
-  <div class="job-container">
       <form action="{{ route('UserController.create') }}" method="POST">
         {{ csrfField() }}
 
-        <label id="usernameInputName" for="username">Username</label>
-        <input id="usernameInput" type="text" name="username" value="{{ old('username', '') }}">
+        <label class="inputLabel" for="username">Username</label>
+        <input class="inputField" type="text" name="username" value="{{ old('username', '') }}">
         @if(hasErrorFor('username'))
             <span>
                 {{ getErrorFor('username') }}
             </span>
         @endif
 
-        <label id="emailInputName" for="email">Email</label>
-        <input id="emailInput" type="email" name="email" value="{{ old('email', '') }}">
+        <label class="inputLabel" for="email">Email</label>
+        <input class="inputField" type="email" name="email" value="{{ old('email', '') }}">
         @if(hasErrorFor('email'))
             <span>
                 {{ getErrorFor('email') }}
             </span>
         @endif
 
-        <label id="passwordInputName" for="password">Password</label>
-        <input id="passwordInput" type="password" name="password">
+        <label class="inputLabel" for="password">Password</label>
+        <input class="inputField" type="password" name="password">
         @if(hasErrorFor('password'))
             <span>
                 {{ getErrorFor('password') }}
             </span>
         @endif
 
-        <button id="signupSumbitButton" type="submit">Join now</button>
+        <button class="submitButton" type="submit">let's begin</button>
       </form>
-  </div>
-</div>
 </div>
 @endsection

@@ -5,6 +5,7 @@ const Journal = use("App/Models/Journal");
 class JournalController {
   async index({ view, auth }) {
     const reflections = await auth.user.journals().fetch();
+    console.log(await auth.user.journals().fetch())
 
     return view.render("journal", { reflections: reflections.toJSON() });
   }

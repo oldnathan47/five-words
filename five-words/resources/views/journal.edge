@@ -5,19 +5,28 @@ Journal Entry
 @endsection
 
 @section('content')
-<div id="uiContainer" class="ui segment">
-    <div id="logInTitle" class="title" > Tell Us About Your Day </div> 
-    <p> Insert five words. Press "Submit" then "Reflection."</p>
+<div id="outerContainer">
+    {{--  <div id="logInTitle" class="title" >breathe. take a moment.</div>  --}}
+    <div id="logInTitle" class="title" >how was your day?</div> 
+    <div id="instructions">write down the five words that come to mind</div>
 <form action="{{ route('JournalController.store') }}" method="POST">
     {{ csrfField() }}
-    <input type="text" name = "reflectionWho" placeholder="Who?" autofocus>
-    <input type="text" name = "reflectionWhat" placeholder="What?">
-    <input type="text" name = "reflectionWhen" placeholder="When?">
-    <input type="text" name = "reflectionWhere" placeholder="Where?">
-    <input type="text" name = "reflectionWhy" placeholder="Why?">
-    <input type="submit" value="Submit">
+    <input type="text" name = "reflectionWho" autofocus>
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhat">
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhen">
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhere" >
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhy">
+    <input class="submitButton" type="submit" value="submit today's five words">
 </form>
-<a href="/reflection"><button class="reflectionButton"> Reflection </button></a>
+{{--  <a href="/reflection"><button class="reflectionButton"> Reflection </button></a>  --}}
 </div>
 
 @endsection
